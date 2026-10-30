@@ -1,0 +1,557 @@
+
+/* =================================
+   THE HAUNTED HAVELI
+   CYBERPUNK HORROR DESIGN
+================================= */
+
+:root {
+  --bg: #090510;
+  --panel: #170d25;
+  --purple: #a83dff;
+  --green: #b6ff00;
+  --white: #ffffff;
+  --muted: #b7a9c4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+button, a {
+  font-family: inherit;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 75px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(9,5,16,.94);
+  border-bottom: 1px solid var(--purple);
+  box-shadow: 0 0 20px #a83dff44;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  font-family: Cinzel, serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--purple);
+  text-shadow: 0 0 15px var(--purple);
+}
+
+.logo small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+  text-shadow: 0 0 12px var(--green);
+}
+
+.status {
+  color: var(--green);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .25; }
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 150px 10% 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  background:
+    linear-gradient(90deg,
+      #090510 10%,
+      #090510e8 50%,
+      #09051066 100%),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1800")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--green);
+  letter-spacing: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: Cinzel, serif;
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 1.12;
+  font-weight: 900;
+  text-shadow: 0 0 25px #a83dff77;
+}
+
+.hero h1 span,
+h2 span {
+  color: var(--purple);
+  text-shadow: 0 0 18px var(--purple);
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 21px;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 25px 0;
+}
+
+.primary-btn {
+  padding: 15px 28px;
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #b6ff0033;
+  transition: .3s;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: var(--green);
+  color: black;
+  box-shadow: 0 0 30px var(--green);
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.warning {
+  color: var(--purple);
+  margin-top: 25px;
+  letter-spacing: 3px;
+}
+
+.hero-orb {
+  width: 260px;
+  height: 260px;
+  border: 1px solid var(--purple);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 0 30px var(--purple),
+    inset 0 0 30px #a83dff66;
+  animation: float 4s ease-in-out infinite;
+}
+
+.orb-inner {
+  font-size: 120px;
+  color: var(--purple);
+  text-shadow: 0 0 30px var(--purple);
+}
+
+@keyframes float {
+  50% { transform: translateY(-20px); }
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 25px;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  justify-content: space-between;
+  color: #9e8ca9;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* COMMON SECTIONS */
+
+.section {
+  padding: 110px 8%;
+  text-align: center;
+}
+
+h2 {
+  font-family: Cinzel, serif;
+  font-size: clamp(28px, 5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.section-description {
+  color: var(--muted);
+  margin-bottom: 45px;
+  font-size: 18px;
+}
+
+/* ROOM CARDS */
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: left;
+}
+
+.room-card {
+  background: var(--panel);
+  border: 1px solid #7832a5;
+  box-shadow: 0 0 15px #a83dff22;
+  transition: .35s;
+  overflow: hidden;
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--green);
+  box-shadow: 0 0 25px #a83dff88;
+}
+
+.room-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  transition: .4s;
+}
+
+.room-card:hover .room-image {
+  transform: scale(1.04);
+}
+
+.bedroom {
+  background-image:
+    linear-gradient(#09051033,#09051066),
+    url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800");
+}
+
+.dancehall {
+  background-image:
+    linear-gradient(#09051033,#09051066),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800");
+}
+
+.passage {
+  background-image:
+    linear-gradient(#09051033,#09051066),
+    url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800");
+}
+
+.room-content {
+  padding: 25px;
+}
+
+.room-number {
+  color: var(--green);
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.room-content h3 {
+  font-family: Cinzel, serif;
+  margin: 15px 0;
+  font-size: 19px;
+}
+
+.room-content p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.room-content button {
+  background: transparent;
+  color: var(--purple);
+  border: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.room-content button:hover {
+  color: var(--green);
+}
+
+/* DISCOVERY PANEL */
+
+.discovery-panel {
+  margin-top: 45px;
+  padding: 40px 20px;
+  border: 1px solid var(--purple);
+  background: #13091f;
+  box-shadow: 0 0 25px #a83dff33;
+}
+
+.discovery-panel h3 {
+  font-family: Cinzel, serif;
+  margin-bottom: 15px;
+}
+
+.discovery-panel p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.clue-status {
+  margin-top: 20px;
+  color: var(--green);
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+/* CLUES */
+
+.clue-section {
+  margin-top: 55px;
+}
+
+.clue-section h3 {
+  font-family: Cinzel, serif;
+  margin-bottom: 25px;
+}
+
+.clue-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.locked-clue,
+.unlocked-clue {
+  padding: 15px;
+  border: 1px solid #6a347f;
+  background: var(--panel);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.unlocked-clue {
+  color: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 12px #b6ff0033;
+}
+
+/* DIARY */
+
+.archive {
+  background:
+    radial-gradient(ellipse at center, #28113e 0%, #10091b 65%);
+}
+
+.diary-card {
+  max-width: 720px;
+  margin: 35px auto 0;
+  padding: 45px 25px;
+  background: #170d25;
+  border: 1px solid var(--purple);
+  box-shadow: 0 0 25px #a83dff44;
+}
+
+.diary-icon {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.diary-label {
+  color: var(--green);
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.diary-text {
+  font-family: Cinzel, serif;
+  font-size: 23px;
+  line-height: 1.8;
+  margin: 30px 0;
+}
+
+.diary-count {
+  color: var(--purple);
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+
+/* FINAL REVELATION */
+
+.final-section {
+  background: #090510;
+}
+
+.final-section > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 25px auto;
+  line-height: 1.6;
+}
+
+.revelation {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 35px;
+  border: 1px solid var(--green);
+  box-shadow: 0 0 30px #b6ff0044;
+  animation: appear 1s ease;
+}
+
+.revelation h3 {
+  color: var(--green);
+  font-family: Cinzel, serif;
+  margin-bottom: 20px;
+}
+
+.revelation p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.mantra {
+  font-family: Cinzel, serif;
+  font-size: 28px;
+  color: var(--purple) !important;
+  margin-top: 20px;
+  text-shadow: 0 0 15px var(--purple);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--purple);
+  color: #a18da9;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width: 850px) {
+  .hero-orb {
+    display: none;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .navbar {
+    padding: 14px 5%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .hero {
+    padding: 150px 7% 100px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-bottom {
+    font-size: 8px;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 85px 6%;
+  }
+
+  .diary-text {
+    font-size: 18px;
+  }
+}

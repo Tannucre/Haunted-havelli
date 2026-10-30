@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Haunted Haveli | Manjulika's Mystery</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- FUTURISTIC NAVBAR -->
+  <nav class="navbar">
+    <a href="#home" class="logo">H<span>H</span> <small>HAUNTED HAVELI</small></a>
+
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#explore">EXPLORE</a>
+      <a href="#archive">ARCHIVE</a>
+    </div>
+
+    <div class="status">
+      <span class="pulse"></span> CURSE ACTIVE
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">WELCOME TO THE FORGOTTEN PALACE</p>
+
+      <h1>THE HAUNTED<br>
+        <span>HAVELI</span>
+      </h1>
+
+      <p class="hero-description">
+        A forgotten dancer. A locked chamber.
+        A mystery buried beneath centuries of silence.
+      </p>
+
+      <button class="primary-btn" onclick="enterPalace()">
+        ENTER THE PALACE ↗
+      </button>
+
+      <p class="warning">⚠ ENTER AT YOUR OWN RISK</p>
+
+    </div>
+
+    <div class="hero-orb">
+      <div class="orb-inner">☠</div>
+    </div>
+
+    <div class="hero-bottom">
+      <span>EST. 18TH CENTURY</span>
+      <span>LOCATION: ROYAL HAVELI</span>
+      <span>STATUS: HAUNTED</span>
+    </div>
+
+  </section>
+
+  <!-- EXPLORATION SECTION -->
+  <section class="explore section" id="explore">
+
+    <p class="eyebrow">CHAPTER 01 / INVESTIGATION</p>
+
+    <h2>EXPLORE THE <span>FORBIDDEN ROOMS</span></h2>
+
+    <p class="section-description">
+      Three locations. Three secrets. One forgotten truth.
+    </p>
+
+    <div class="room-grid">
+
+      <article class="room-card">
+        <div class="room-image bedroom"></div>
+        <div class="room-content">
+          <span class="room-number">ROOM 001</span>
+          <h3>THE LOCKED BEDROOM</h3>
+          <p>Where Manjulika's story began.</p>
+          <button onclick="discoverRoom('bedroom')">
+            INVESTIGATE ↗
+          </button>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-image dancehall"></div>
+        <div class="room-content">
+          <span class="room-number">ROOM 002</span>
+          <h3>THE DANCE HALL</h3>
+          <p>Echoes of a forgotten performance.</p>
+          <button onclick="discoverRoom('dance')">
+            INVESTIGATE ↗
+          </button>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-image passage"></div>
+        <div class="room-content">
+          <span class="room-number">ROOM 003</span>
+          <h3>THE SECRET PASSAGE</h3>
+          <p>A hidden path beneath the palace.</p>
+          <button onclick="discoverRoom('passage')">
+            INVESTIGATE ↗
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ROOM DISCOVERY -->
+    <div class="discovery-panel" id="discovery">
+
+      <p class="eyebrow">INVESTIGATION TERMINAL</p>
+
+      <h3 id="discovery-title">AWAITING INVESTIGATION...</h3>
+
+      <p id="discovery-text">
+        Select a room above to reveal its hidden secret.
+      </p>
+
+      <div class="clue-status" id="clue-status">
+        CLUES DISCOVERED: 0 / 3
+      </div>
+
+    </div>
+
+    <!-- CLUE COLLECTION -->
+    <div class="clue-section">
+
+      <h3>YOUR DISCOVERED CLUES</h3>
+
+      <div class="clue-list" id="clue-list">
+        <span class="locked-clue">🔒 UNKNOWN CLUE 01</span>
+        <span class="locked-clue">🔒 UNKNOWN CLUE 02</span>
+        <span class="locked-clue">🔒 UNKNOWN CLUE 03</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DIARY SECTION -->
+  <section class="archive section" id="archive">
+
+    <p class="eyebrow">DIGITAL ARCHIVE / 001</p>
+
+    <h2>MANJULIKA'S <span>LOST DIARY</span></h2>
+
+    <div class="diary-card">
+
+      <div class="diary-icon">📜</div>
+
+      <p class="diary-label">PERSONAL RECORD / CLASSIFIED</p>
+
+      <p id="diary-text" class="diary-text">
+        "They locked the doors, but they could never silence my soul..."
+      </p>
+
+      <p id="diary-count" class="diary-count">
+        ENTRY 01 / 04
+      </p>
+
+      <button class="primary-btn" onclick="nextDiary()">
+        READ NEXT ENTRY ↗
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL MYSTERY -->
+  <section class="final-section section">
+
+    <p class="eyebrow">FINAL CHAPTER</p>
+
+    <h2>THE TRUTH BEHIND <span>THE CURSE</span></h2>
+
+    <p id="final-message">
+      The palace is waiting. Discover all three clues to unlock the final mystery.
+    </p>
+
+    <button id="reveal-btn" class="primary-btn" disabled onclick="revealMystery()">
+      UNLOCK THE TRUTH
+    </button>
+
+    <div id="revelation" class="revelation hidden">
+      <h3>HER STORY SHALL BE REMEMBERED.</h3>
+      <p>
+        Manjulika was more than a forgotten dancer.
+        Behind the locked chamber was a woman whose voice
+        and legacy deserved to be heard.
+      </p>
+      <p class="mantra">AMI JE TOMAR...</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>THE HAUNTED HAVELI © 2026</p>
+    <p>THE PAST NEVER RESTS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
